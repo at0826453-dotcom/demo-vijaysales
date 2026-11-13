@@ -223,7 +223,7 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/tabs-product.js
-  var MAX_CARDS2 = 8;
+  var MAX_CARDS2 = 5;
   function parse5(element, { document, params }) {
     const clean = (t) => (t || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
     const price = (t) => clean(t).replace(/₹\s+/g, "\u20B9");

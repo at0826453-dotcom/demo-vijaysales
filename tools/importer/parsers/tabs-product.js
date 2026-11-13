@@ -16,9 +16,10 @@
  *  - optional View All row: one cell with only the link
  *
  * Only representative content is authored: the first MAX_CARDS cards per
- * tab, not every lazily scrolled item.
+ * tab, not every lazily scrolled item. Capped at 5 so the homepage stays
+ * under the 300-images-per-page upload limit (36 tabs x 5 cards).
  */
-const MAX_CARDS = 8;
+const MAX_CARDS = 5;
 
 export default function parse(element, { document, params }) {
   const clean = (t) => (t || '').replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
