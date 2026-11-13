@@ -1,0 +1,29 @@
+{
+  "status": "success",
+  "url": "https://www.vijaysales.com/",
+  "path": "index",
+  "timestamp": "2026-11-13T13:46:50.121Z",
+  "title": "Vijay Sales: Best Online Electronics Shopping Store in India",
+  "template": "home",
+  "blocks": [
+    "carousel-hero",
+    "cards-bank-offer",
+    "cards-category",
+    "cards-product-tile",
+    "cards-product-tile",
+    "tabs-product",
+    "tabs-product",
+    "tabs-product",
+    "tabs-product",
+    "cards-promo-tile",
+    "cards-promo-tile",
+    "cards-product",
+    "cards-product",
+    "cards-video-reel",
+    "cards-brand-logo",
+    "columns-feature-panel",
+    "cards-stats",
+    "columns-eco-steps"
+  ],
+  "importScript": "476951080be1"
+}

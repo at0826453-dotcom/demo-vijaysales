@@ -1,0 +1,34 @@
+{
+  "variantName": "tabs-product",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "pill-shaped category tabs, each panel holding a scrolling carousel of bordered product cards; optional band background artwork and View All link",
+    "notes": [
+      "Pill-shaped category tabs (active red) over a carousel of bordered product cards.",
+      "Festive bokeh/diya photo background spanning the band (desktop/mobile background images), heading, red-pill active category tabs, product card carousel per tab with badges (No Cost EMI, Bank Offer), rating, price, MRP strike and red discount pill.",
+      "Same pill tabs + product carousel.",
+      "Same festive photo background and tabbed product carousel as s6.",
+      "Same pill tabs + product carousel (white band, View All link is extra content).",
+      "White band: heading, outlined pill tabs (active red) and a black View All pill at the right, bordered product cards with badges.",
+      "Festive photo background tabbed product carousel, as s6."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per tab; cell 1: tab label; cell 2: a bulleted list of product cards, each list item holding the product image, linked name and price lines (separated by line breaks). Optional extra rows: a single cell with only picture(s) = band background (desktop, then mobile); a single cell with only a link = View All action shown beside the tabs",
+    "rows": "one row per tab",
+    "cells": [
+      "Tab label",
+      "Tab content"
+    ],
+    "reasons": [
+      "Interactive tabbed component: Tabs; each panel is a dynamic product carousel. Product list linking to product detail pages (/p/...) with price, MRP, discount, rating and badges; dynamic merchandised list (1,000+ cards in the DOM across tabs/carousels, counts vary). Author representative content only: the cards visible on load (about 4-8 per list), not every hidden item. Keep every tab label. The festive photo background belongs to this block (section not colored).",
+      "Tabs with dynamic product panels. Product list linking to product detail pages (/p/...) with price, MRP, discount, rating and badges; dynamic merchandised list (1,000+ cards in the DOM across tabs/carousels, counts vary). Author representative content only: the cards visible on load (about 4-8 per list), not every hidden item."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Tabbed product deals sections (Grand Diwali Offers, Upgrade Your Home, Exclusive Deals, Gifting Ideas).",
+  "reuseGuidance": "Reuse tabs-product wherever the same pattern appears (s6 (Grand Diwali Offers): Category tabs (12: Latest 5G Smartphones, Air Conditioners, Televisions, Washing Machine, Air Purifiers, Laptops, Microwave, Truly Wireless Earbuds, Air Fryer, Induction Cooktop, Soundbars, Small Home Appliances), each with a product carousel; s9 (Upgrade Your Home): Category tabs (10: Air Conditioners, Televisions, Refrigerators, Washing Machines, Dishwashers, Chimneys, Home Audio, Cooktop & HOBs, Vacuum Cleaners, Water Purifiers) with product carousels; s10 (Exclusive Deals & Offers): Tabs (New Releases, Trending, Price Drop, Best Sellers) with product carousels, plus View All link; s11 (Great Gifting Ideas): Category tabs (10: Truly Wireless Earbuds, Air Fryers, Mixers Grinders, Headphones, Neckband, Power Banks, Grooming and Styling, Portable Blenders, Party Speakers, Portable Speakers) with product carousels). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

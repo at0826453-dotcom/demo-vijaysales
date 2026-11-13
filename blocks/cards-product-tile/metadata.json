@@ -1,0 +1,30 @@
+{
+  "variantName": "cards-product-tile",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "horizontal carousel of large grey-background product tiles (image, name, rating, price), usually placed beside an intro in a split section",
+    "notes": [
+      "Large grey-background product image tiles with name, rating and price below, scrolling beside an intro (split).",
+      "Split layout: narrow left intro (heading, offer text, No Cost EMI note with asterisk icon, black pill View All button) beside a horizontally scrolling carousel of large grey product tiles (image, name, star rating, price).",
+      "Same large grey product tile carousel as s4-q2.",
+      "Split layout like s4: left \"Super OFFERS\" logo image, heading, text, black View All pill; right carousel of large grey product tiles."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per product; cell 1: product image; cell 2: product name link, rating, price (strike the MRP with del) and discount as paragraphs",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Product list linking to product detail pages (/p/...) with price, MRP, discount, rating and badges; dynamic merchandised list (1,000+ cards in the DOM across tabs/carousels, counts vary). Author representative content only: the cards visible on load (about 4-8 per list), not every hidden item."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Merchandised product carousels (Best of Apple, Super Offers). Put the intro heading, text and View All button as default content in the same section (section style split).",
+  "reuseGuidance": "Reuse cards-product-tile wherever the same pattern appears (s4 (Best Of Apple): Apple product carousel (iPhone 18 Pro, AirPods 5, MacBook Pro, ...); s14 (Super Offers): Super offers product carousel). Section styles seen: split.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

@@ -1,0 +1,28 @@
+{
+  "variantName": "cards-bank-offer",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "auto-scrolling strip of compact bordered bank-offer chips (logo left, offer text right)",
+    "notes": [
+      "Compact bordered horizontal chips (small logo left, offer text right) in an auto-scrolling strip.",
+      "Auto-scrolling marquee of small bordered offer chips: bank logo, offer text, *T&C apply. 9 unique offers (duplicated 3x in DOM for looping)."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per offer; cell 1: bank logo image; cell 2: offer text and the T&C note as paragraphs. Author each unique offer once; the block duplicates items itself for the looping animation",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Repeating look-alike items (logo + short text) in a horizontally scrolling strip: Cards. Author the 9 unique offers once, not the loop duplicates."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Bank / card offer marquee under the hero.",
+  "reuseGuidance": "Reuse cards-bank-offer wherever the same pattern appears (s2 (Bank offers strip): 9 bank offer chips (logo + offer text + T&C note)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

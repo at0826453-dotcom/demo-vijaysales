@@ -1,0 +1,371 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.vijaysales.com/"
+      ],
+      "representativeUrl": "https://www.vijaysales.com/",
+      "description": "Vijay Sales homepage: hero banner carousel, bank offers, category quick links, merchandised product carousels and tabs, promo banners, brand logos, loyalty panels, stats and sustainability band.",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".home-swipercarousel"
+          ]
+        },
+        {
+          "name": "cards-bank-offer",
+          "instances": [
+            ".home-bank-container"
+          ]
+        },
+        {
+          "name": "cards-category",
+          "instances": [
+            ".quicklinks-wrp"
+          ]
+        },
+        {
+          "name": "cards-product-tile",
+          "instances": [
+            ".latestProductsWrap-rightContent .customproductcarousel",
+            ".superOffersWrap-rightContent .customproductcarousel"
+          ]
+        },
+        {
+          "name": "tabs-product",
+          "instances": [
+            ".offerProducts .desktopBg .seasonProductTabs",
+            ".exclusiveDealsTabs:has(.cmp-tabs)"
+          ]
+        },
+        {
+          "name": "cards-promo-tile",
+          "instances": [
+            ".productCardWrp > .cmp-container"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            ".gamingProductsWrap .customproductcarousel",
+            ".productrecommendations .productcarousel__parent"
+          ]
+        },
+        {
+          "name": "cards-video-reel",
+          "instances": [
+            ".reels"
+          ]
+        },
+        {
+          "name": "cards-brand-logo",
+          "instances": [
+            ".brands-imgs"
+          ]
+        },
+        {
+          "name": "columns-feature-panel",
+          "instances": [
+            ".loyalty-card-wrp"
+          ]
+        },
+        {
+          "name": "cards-stats",
+          "instances": [
+            ".counter-wrap"
+          ]
+        },
+        {
+          "name": "columns-eco-steps",
+          "instances": [
+            ".sustanability-wrap"
+          ]
+        }
+      ],
+      "urlPattern": "/",
+      "sections": [
+        {
+          "id": "s1",
+          "name": "Hero banner carousel",
+          "selector": [
+            ".home-swipercarousel"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s2",
+          "name": "Bank offers strip",
+          "selector": [
+            ".home-bank-container-parent"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-bank-offer"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s3",
+          "name": "Category quick links",
+          "selector": [
+            ".quicklinks-wrp"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-category"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s4",
+          "name": "Best Of Apple",
+          "selector": [
+            ".latestProductsWrap"
+          ],
+          "style": "split",
+          "blocks": [
+            "cards-product-tile"
+          ],
+          "defaultContent": [
+            ".latestProductsWrap-leftContent"
+          ]
+        },
+        {
+          "id": "s5",
+          "name": "MacBook promo banner",
+          "selector": [
+            ".promotionoffer-image:has(#vscontainer-4dc5023782)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".promotionoffer-image:has(#vscontainer-4dc5023782) .productpromtioncardteaser"
+          ]
+        },
+        {
+          "id": "s6",
+          "name": "Grand Diwali Offers",
+          "selector": [
+            ".offerProducts:has(#title-da0639ad04)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-product"
+          ],
+          "defaultContent": [
+            ".offerProducts:has(#title-da0639ad04) .desktopBg .title"
+          ]
+        },
+        {
+          "id": "s7",
+          "name": "Google Pixel promo banner",
+          "selector": [
+            ".promotionoffer-image:has(#vscontainer-d1f6d1dc6b)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".promotionoffer-image:has(#vscontainer-d1f6d1dc6b) .productpromtioncardteaser"
+          ]
+        },
+        {
+          "id": "s8",
+          "name": "OPPO / vivo promo tiles",
+          "selector": [
+            ".productCardWrp:has(#vscontainer-8e6682f20a)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-promo-tile"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s9",
+          "name": "Upgrade Your Home",
+          "selector": [
+            ".offerProducts:has(#title-16448356b3)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-product"
+          ],
+          "defaultContent": [
+            ".offerProducts:has(#title-16448356b3) .desktopBg .title"
+          ]
+        },
+        {
+          "id": "s10",
+          "name": "Exclusive Deals & Offers",
+          "selector": [
+            ".exclusiveDeals:has(.cmp-tabs)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-product"
+          ],
+          "defaultContent": [
+            ".exclusiveDeals:has(.cmp-tabs) > .cmp-container > .title"
+          ]
+        },
+        {
+          "id": "s11",
+          "name": "Great Gifting Ideas",
+          "selector": [
+            ".offerProducts:has(#title-a60f440709)"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-product"
+          ],
+          "defaultContent": [
+            ".offerProducts:has(#title-a60f440709) .desktopBg .title"
+          ]
+        },
+        {
+          "id": "s12",
+          "name": "TV deals",
+          "selector": [
+            ".promotionoffer-image:has(#productpromtioncardteaser-d97853042f)",
+            ".gamingProductsWrap"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            "#productpromtioncardteaser-d97853042f"
+          ]
+        },
+        {
+          "id": "s13",
+          "name": "Audio promo tiles",
+          "selector": [
+            ".productCardWrp:has(#vscontainer-56e6d7fb52)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-promo-tile"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s14",
+          "name": "Super Offers",
+          "selector": [
+            ".superOffersWrap"
+          ],
+          "style": "split",
+          "blocks": [
+            "cards-product-tile"
+          ],
+          "defaultContent": [
+            ".superOffersWrap-leftContent"
+          ]
+        },
+        {
+          "id": "s15",
+          "name": "Explore Our Featured Products (video reels)",
+          "selector": [
+            ".exclusiveDeals:has(.reels)"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-video-reel"
+          ],
+          "defaultContent": [
+            ".exclusiveDeals:has(.reels) > .cmp-container > .title"
+          ]
+        },
+        {
+          "id": "s16",
+          "name": "Products Recommended For You",
+          "selector": [
+            ".vscontainer:has(> .cmp-container > .productrecommendations)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            ".productrecommendations .productcarousel__title"
+          ]
+        },
+        {
+          "id": "s17",
+          "name": "Discover Leading Brands",
+          "selector": [
+            ".brandListingWrap"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-brand-logo"
+          ],
+          "defaultContent": [
+            ".brandListingWrap > .cmp-container > .title",
+            ".brandListingWrap > .cmp-container > .text",
+            ".brandListingWrap > .cmp-container > .button"
+          ]
+        },
+        {
+          "id": "s18",
+          "name": "Bank discount strip",
+          "selector": [
+            ".discountStripWrap"
+          ],
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            ".discountStripWrap .textOne",
+            ".discountStripWrap .textTwo"
+          ]
+        },
+        {
+          "id": "s19",
+          "name": "Partner / loyalty / warranty cards",
+          "selector": [
+            ".loyalty-card-wrp"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-feature-panel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s20",
+          "name": "Stats counters",
+          "selector": [
+            ".counter-wrap"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-stats"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "s21",
+          "name": "Sustainable Electronics",
+          "selector": [
+            ".sustanability-wrap"
+          ],
+          "style": "dark-green",
+          "blocks": [
+            "columns-eco-steps"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

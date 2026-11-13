@@ -1,0 +1,28 @@
+{
+  "variantName": "columns-eco-steps",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "intro panel | image card | panel of numbered steps",
+    "notes": [
+      "Intro panel | image card | lime panel of three numbered steps.",
+      "Full-width band with dark green (#0d5945) section background: left panel white heading and black \"Know More\" pill, centre earth image card, right lime-yellow panel with 3 numbered steps (Collect e-Waste, Drop-off, Contribute to Change).",
+      "\"dark-green\""
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row, three cells: (1) heading and Know More link; (2) image only; (3) numbered list of steps (each item a bold step title and text). The block numbers the steps",
+    "rows": "one or more rows, same cell count",
+    "cells": [
+      "one cell per column: text, images, links"
+    ],
+    "reasons": [
+      "Fixed set of different content side by side (intro, image, steps): Columns. The section is colored dark green (section style dark-green); the lime-yellow fill of the steps column is the block's own column styling."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Sustainable Electronics (e-waste) section, section style dark-green.",
+  "reuseGuidance": "Reuse columns-eco-steps wherever the same pattern appears (s21 (Sustainable Electronics): Intro (heading + Know More) | image | 3 numbered steps). Section styles seen: dark-green.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

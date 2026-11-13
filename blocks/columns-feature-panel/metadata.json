@@ -1,0 +1,27 @@
+{
+  "variantName": "columns-feature-panel",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "one row of three differently designed rounded panels (partners, loyalty sign-up, extended warranty)",
+    "notes": [
+      "Three rounded panels of different design (dark texture, red rewards with form, white bordered).",
+      "Three different rounded panels side by side: (1) black panel with texture background, Trusted Advisors badge, \"Your Reliable Partners\" heading, text, white \"Explore Our story\" pill; (2) red rewards panel with badge, loyalty text, Mobile Number field and \"Verify Number\" button (OTP flow); (3) white bordered VS+ Extended Warranty panel with logo, heading, text and product image."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row, three cells; each cell: badge/logo image, heading, text, CTA link and optional product image. A cell holding only an image becomes an image panel",
+    "rows": "one or more rows, same cell count",
+    "cells": [
+      "one cell per column: text, images, links"
+    ],
+    "reasons": [
+      "A fixed set of different content side by side that does not wrap into a list: Columns (one row, three cells). The loyalty phone/OTP form is an application feature; author its text and a link to /loyalty."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Partner / loyalty / warranty promo panels. The loyalty OTP form is not built; author its text and a link to /loyalty.",
+  "reuseGuidance": "Reuse columns-feature-panel wherever the same pattern appears (s19 (Partner / loyalty / warranty cards): Three distinct promotional panels (Reliable Partners, Loyalty sign-up, VS+ Extended Warranty)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

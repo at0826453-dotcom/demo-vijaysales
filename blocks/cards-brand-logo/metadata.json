@@ -1,0 +1,28 @@
+{
+  "variantName": "cards-brand-logo",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "centred row of circular light-grey brand logo tiles, each linking to the brand store",
+    "notes": [
+      "Circular light-grey logo tiles in a single centred row.",
+      "Centered heading and intro, row of 8 circular light-grey brand logo tiles each linking to a brand store, black pill \"Shop Top Brands\" button."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per brand; cell 1: brand logo image; cell 2: link to the brand page (a link whose text is only the URL is folded into the logo)",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Repeating look-alike linked logo tiles: Cards (image-only)."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Discover Leading Brands section; heading, intro and Shop Top Brands button stay default content (section style centered).",
+  "reuseGuidance": "Reuse cards-brand-logo wherever the same pattern appears (s17 (Discover Leading Brands): 8 brand logo tiles (Vise, Apple, LG, Samsung, Sony, Whirlpool, OnePlus, Mi) linking to brand pages). Section styles seen: centered.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

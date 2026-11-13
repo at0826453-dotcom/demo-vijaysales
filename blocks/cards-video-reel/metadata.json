@@ -1,0 +1,28 @@
+{
+  "variantName": "cards-video-reel",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "scroller of portrait short-video thumbnails with a play icon and view count",
+    "notes": [
+      "Portrait short-video thumbnails with play icon and view count in a scroller.",
+      "Centered heading with bullet dots; horizontal carousel of portrait short-video thumbnails with view counts and play icons (third-party SaleAssist widget injected client-side; not present in cleaned.html)."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per video; cell 1: thumbnail image; cell 2: video link and optional view count / caption",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Repeating look-alike video tiles in a scroller: Cards (thumbnail image + video link). Content is injected by a third-party widget at runtime, so author the representative thumbnails captured from the live page (prod-saleassist.gumlet.io thumbnails)."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Featured product video reels.",
+  "reuseGuidance": "Reuse cards-video-reel wherever the same pattern appears (s15 (Explore Our Featured Products (video reels)): Short video reel thumbnails (about 11) with view counts). Section styles seen: centered.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

@@ -1,0 +1,28 @@
+{
+  "variantName": "cards-stats",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "text-only stats: very large bold value with a short caption beside it, three across",
+    "notes": [
+      "Text-only: very large bold stat value with small caption beside it, three across.",
+      "Three large bold numbers (175+, 10M+, 1000+) each with a short caption to the right."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per stat; one cell: the value (bold, first line) and the caption (second line)",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Repeating look-alike stat items: Cards (no images). Stat values are kept as strong paragraph text, not headings."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Company counters (stores, customers, brands).",
+  "reuseGuidance": "Reuse cards-stats wherever the same pattern appears (s20 (Stats counters): 3 stats (value + caption)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

@@ -1,0 +1,28 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "full-width promotional banner slider; each slide is a linked banner image with its copy baked into the artwork, with prev/next arrows, dot pagination and autoplay",
+    "notes": [
+      "Full-width rounded image banner slider with arrows and dot pagination; text baked into artwork.",
+      "Full-width rounded promo banner slider (14 slides, desktop + mobile images, prev/next arrows, dot pagination). Each slide is a linked image with the copy baked into the artwork."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per slide; cell 1: desktop banner image, optionally followed by a mobile banner image (first picture = desktop, second = mobile); cell 2: the slide link (or optional heading, text and CTA when the copy is not baked into the image)",
+    "rows": "one row per slide",
+    "cells": [
+      "Image (mandatory, only content of cell)",
+      "Text content (optional: heading, description, CTA link)"
+    ],
+    "reasons": [
+      "Interactive rotating slider of image slides: Carousel. Text is part of the banner artwork, so each row holds the image (desktop, mobile) plus link."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Home page hero banner rotator.",
+  "reuseGuidance": "Reuse carousel-hero wherever the same pattern appears (s1 (Hero banner carousel): 14 linked promotional banner slides (desktop and mobile image per slide)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

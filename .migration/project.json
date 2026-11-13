@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "demo-vijaysales": {
+      "previewOrg": "at0826453-dotcom",
+      "previewSite": "demo-vijaysales",
+      "contentHostUrl": "https://content.da.live/at0826453-dotcom/demo-vijaysales/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.cards-category > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.cards-category > ul > li {
+  position: relative;
+  min-width: 0;
+  flex: 0 0 calc((100% - 32px) / 3);
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.cards-category .cards-category-card-image {
+  line-height: 0;
+}
+
+.cards-category .cards-category-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.cards-category .cards-category-card-link {
+  display: block;
+}
+
+/* horizontal scroller */
+.cards-category {
+  position: relative;
+}
+
+.cards-category > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-category .cards-category-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cards-category .cards-category-nav[hidden] {
+  display: none;
+}
+
+.cards-category .cards-category-nav button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid currentcolor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.cards-category .cards-category-nav button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cards-category .cards-category-nav button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentcolor;
+  border-bottom: 0;
+  border-left: 0;
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.cards-category .cards-category-nav .cards-category-next::after {
+  left: calc(50% - 2px);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cards-category .cards-category-card-body {
+  margin-top: 8px;
+}
+
+.cards-category .cards-category-card-body p {
+  margin: 0;
+}
+
+@media (width >= 600px) {
+  .cards-category > ul > li {
+    flex-basis: calc((100% - 64px) / 5);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-category > ul > li {
+    flex-basis: calc((100% - 128px) / 9);
+  }
+}

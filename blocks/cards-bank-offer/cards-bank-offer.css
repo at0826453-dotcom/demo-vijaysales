@@ -1,0 +1,66 @@
+.cards-bank-offer > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+.cards-bank-offer > ul > li {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  max-width: 320px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.cards-bank-offer .cards-bank-offer-card-image {
+  line-height: 0;
+  flex: 0 0 40px;
+}
+
+.cards-bank-offer .cards-bank-offer-card-image img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.cards-bank-offer .cards-bank-offer-card-link {
+  display: block;
+}
+
+/* single-line strip of compact chips: logo left, text right */
+.cards-bank-offer {
+  overflow: hidden;
+}
+
+.cards-bank-offer .cards-bank-offer-card-body p {
+  margin: 0;
+}
+
+.cards-bank-offer.cards-bank-offer-animated > ul {
+  animation: cards-bank-offer-marquee 40s linear infinite;
+}
+
+.cards-bank-offer.cards-bank-offer-animated:hover > ul,
+.cards-bank-offer.cards-bank-offer-animated:focus-within > ul {
+  animation-play-state: paused;
+}
+
+@keyframes cards-bank-offer-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-bank-offer {
+    overflow-x: auto;
+  }
+}

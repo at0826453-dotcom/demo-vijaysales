@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "scrolling carousel of bordered white product cards with badges, rating, price/MRP and discount",
+    "notes": [
+      "Bordered white product cards with badge pills, rating, price/MRP/discount pill, scrolling carousel.",
+      "Dark rounded TV category banner image (decorative SVG background + TV lifestyle image) followed by a product carousel of TVs with a deal countdown (Price Drop, ends in hh:mm:ss).",
+      "Same bordered product card carousel; extra compare/delivery lines are additional paragraphs.",
+      "Heading and bordered product card carousel (badges, compare checkbox, rating, price, Extra Deals Available, delivery date, wishlist and cart icons). Personalised."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per product; cell 1: product image; cell 2: badges, product name link, rating, price (strike the MRP with del), discount and extra lines (delivery, offers) as paragraphs",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Product list linking to product detail pages (/p/...) with price, MRP, discount, rating and badges; dynamic merchandised list (1,000+ cards in the DOM across tabs/carousels, counts vary). Author representative content only: the cards visible on load (about 4-8 per list), not every hidden item.",
+      "Product list linking to product detail pages (/p/...) with price, MRP, discount, rating and badges; dynamic merchandised list (1,000+ cards in the DOM across tabs/carousels, counts vary). Author representative content only: the cards visible on load (about 4-8 per list), not every hidden item. Personalised per visitor."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Product lists (TV deals, Recommended for You). Author representative cards only.",
+  "reuseGuidance": "Reuse cards-product wherever the same pattern appears (s12 (TV deals): TV product carousel (SANSUI, TCL, Xiaomi, LG, ...); s16 (Products Recommended For You): Recommended product cards (9 in DOM)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

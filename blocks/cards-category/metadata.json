@@ -1,0 +1,28 @@
+{
+  "variantName": "cards-category",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "single scrolling row of borderless category tiles: product cut-out image above a centred label link, with arrow controls",
+    "notes": [
+      "Borderless icon tiles: product cut-out image above a centred label link, single scrolling row.",
+      "Row of 9 category tiles: product cut-out image above a label, each linking to a category page; arrow controls."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per category; cell 1: category image; cell 2: category label as a link to the listing page (the image becomes clickable with the same link)",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Repeating look-alike linked tiles that flow and wrap: Cards. Labels are link text, not headings."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Category quick links row.",
+  "reuseGuidance": "Reuse cards-category wherever the same pattern appears (s3 (Category quick links): 9 category tiles (image + label linking to category listing)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}

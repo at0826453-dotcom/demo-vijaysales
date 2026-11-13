@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-promo-tile",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "two large rounded image-only promotional tiles side by side, stacking on mobile",
+    "notes": [
+      "Two large rounded image-only promo tiles side by side.",
+      "Two equal rounded promotional image tiles side by side (OPPO, vivo), copy baked into the image.",
+      "Same two image-only promo tiles.",
+      "Two rounded promo image tiles side by side (\"Turn up the volume\" soundbars, \"Feel every beat\" speakers)."
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row per tile; cell 1: promo image; cell 2 (optional): link to the promo destination (a link whose text is only the URL is folded into the image)",
+    "rows": "one row per card",
+    "cells": [
+      "Image or icon",
+      "Text: optional heading/title, description, CTA link"
+    ],
+    "reasons": [
+      "Two look-alike linked image tiles of the same kind that stack on mobile: Cards (image-only), same pattern reused in s13.",
+      "Same image-only promo tile Cards pattern as s8."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Brand / category promo image pairs.",
+  "reuseGuidance": "Reuse cards-promo-tile wherever the same pattern appears (s8 (OPPO / vivo promo tiles): 2 promo image tiles (OPPO, vivo); s13 (Audio promo tiles): 2 promo image tiles (soundbars, speakers)). Section styles seen: none.",
+  "sourceUrl": "https://www.vijaysales.com/"
+}
