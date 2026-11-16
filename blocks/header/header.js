@@ -26,6 +26,20 @@ async function fetchNav() {
 }
 
 /**
+ * Document Authoring / Edge Delivery return the fragment with images wrapped in
+ * <picture> and list-item labels wrapped in <p>. Flatten both so the same markup
+ * is processed locally and in production.
+ * @param {Element} root fragment container
+ */
+function normalizeFragment(root) {
+  root.querySelectorAll('picture').forEach((pic) => {
+    const img = pic.querySelector('img');
+    if (img) pic.replaceWith(img);
+  });
+  root.querySelectorAll('li > p:first-child').forEach((p) => p.replaceWith(...p.childNodes));
+}
+
+/**
  * Makes relative image paths absolute against the fragment URL so they work on any page.
  * @param {Element} root container
  * @param {string} base fragment URL
@@ -246,6 +260,7 @@ export default async function decorate(block) {
   if (!fragment) return;
   const holder = document.createElement('div');
   holder.innerHTML = fragment.html;
+  normalizeFragment(holder);
   resolveImages(holder, fragment.base);
 
   const nav = document.createElement('nav');
