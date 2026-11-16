@@ -1,14 +1,18 @@
 // Footer: reads all copy, links and images from the footer fragment (footer.plain.html)
 // and builds the layout, newsletter form and back-to-top control around it.
 
+/** True on Edge Delivery hosts, where fragments live at the site root only. */
+const IS_EDGE_HOST = /\.(aem|hlx)\.(page|live)$/.test(window.location.hostname);
+
 /**
  * Fetches the footer fragment. Metadata-independent: /content first (local preview),
  * then the site root (Document Authoring / Edge Delivery).
  * @returns {Promise<{html: string, base: string}|null>}
  */
 async function fetchFooter() {
-  let resp = await fetch('/content/footer.plain.html');
-  if (!resp.ok) resp = await fetch('/footer.plain.html');
+  // /content first for the local preview; skipped on Edge Delivery hosts (it would 404)
+  let resp = IS_EDGE_HOST ? null : await fetch('/content/footer.plain.html');
+  if (!resp || !resp.ok) resp = await fetch('/footer.plain.html');
   if (!resp.ok) return null;
   const base = new URL(resp.url || '/footer.plain.html', window.location.href).href;
   return { html: await resp.text(), base };

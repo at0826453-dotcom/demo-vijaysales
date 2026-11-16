@@ -2,6 +2,9 @@
 // and builds the layout, search form and megamenu behaviour around it.
 
 const DESKTOP = window.matchMedia('(width >= 900px)');
+/** True on Edge Delivery hosts, where fragments live at the site root only. */
+const IS_EDGE_HOST = /\.(aem|hlx)\.(page|live)$/.test(window.location.hostname);
+
 const SECTION_NAMES = ['brand', 'location', 'search', 'tools', 'sections'];
 
 /**
@@ -10,19 +13,13 @@ const SECTION_NAMES = ['brand', 'location', 'search', 'tools', 'sections'];
  * @returns {Promise<{html: string, base: string}|null>}
  */
 async function fetchNav() {
-  const paths = ['/content/nav.plain.html', '/nav.plain.html'];
-  // eslint-disable-next-line no-restricted-syntax
-  for (const path of paths) {
-    // eslint-disable-next-line no-await-in-loop
-    const resp = await fetch(path);
-    if (resp.ok) {
-      // eslint-disable-next-line no-await-in-loop
-      const base = new URL(resp.url || path, window.location.href).href;
-      // eslint-disable-next-line no-await-in-loop
-      return { html: await resp.text(), base };
-    }
-  }
-  return null;
+  // /content first for the local preview; skipped on Edge Delivery hosts, where it
+  // would only 404 (a console error that lowers the Lighthouse best-practices score)
+  let resp = IS_EDGE_HOST ? null : await fetch('/content/nav.plain.html');
+  if (!resp || !resp.ok) resp = await fetch('/nav.plain.html');
+  if (!resp.ok) return null;
+  const base = new URL(resp.url || '/nav.plain.html', window.location.href).href;
+  return { html: await resp.text(), base };
 }
 
 /**
