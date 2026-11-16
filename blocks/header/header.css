@@ -183,7 +183,7 @@ header .nav-search-form input {
   outline: 0;
   background: transparent;
   font: 400 12px/16px var(--body-font-family);
-  color: #7b7b7b;
+  color: var(--nav-text);
 }
 
 header .nav-search-form input::placeholder {

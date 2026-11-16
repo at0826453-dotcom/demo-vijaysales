@@ -104,7 +104,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 12px;
+  bottom: 3px; /* dot sits 9px up inside its 24px button: visual dot stays 12px from the edge */
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
@@ -115,26 +115,47 @@
 
 .carousel-hero .carousel-hero-slide-indicator {
   display: flex;
-  margin: 0 2px;
 }
 
+/* 24x24 tap target (WCAG 2.5.8) with the source's small dot drawn inside */
 .carousel-hero .carousel-hero-slide-indicator button {
-  width: 6px;
-  height: 6px;
+  position: relative;
+  width: 24px;
+  height: 24px;
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 50%;
-  background-color: rgb(255 255 255);
-  opacity: 0.6;
+  background: transparent;
   cursor: pointer;
 }
 
+.carousel-hero .carousel-hero-slide-indicator button::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255);
+  opacity: 0.6;
+  transform: translateX(-50%);
+}
+
 .carousel-hero .carousel-hero-slide-indicator button:disabled {
+  cursor: default;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:disabled::before {
+  bottom: 8px;
   width: 8px;
   height: 8px;
   opacity: 1;
-  cursor: default;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
 }
 
 @media (width >= 900px) {
@@ -165,6 +186,6 @@
   }
 
   .carousel-hero .carousel-hero-slide-indicators {
-    bottom: 14px;
+    bottom: 5px;
   }
 }

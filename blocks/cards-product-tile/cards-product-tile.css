@@ -75,7 +75,7 @@
   margin: 0;
   font-size: 12px;
   line-height: 16px;
-  color: #7b7b7b;
+  color: #707070; /* #7b7b7b on the source; darkened for WCAG AA contrast (4.95:1) */
 }
 
 /* MRP with struck-through price */

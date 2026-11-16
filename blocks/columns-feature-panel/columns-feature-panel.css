@@ -62,13 +62,13 @@
 /* Panel 1: Your Reliable Partners (dark textured teaser) */
 .columns-feature-panel .columns-feature-panel-panel-1 {
   padding: 41px 24px 119px;
-  background: #000 url('https://www.vijaysales.com/content/dam/vijaysaleswebsite/in/en/static-pages/homepage/images/3-card-layout/reliable-partner-bg-desktop.png') center / cover no-repeat;
+  background: #000 url('reliable-partner-bg.png') center / cover no-repeat;
 }
 
 .columns-feature-panel .columns-feature-panel-panel-1 .columns-feature-panel-media img,
 .columns-feature-panel .columns-feature-panel-panel-2 .columns-feature-panel-media img {
   width: 100px;
-  height: 100px;
+  height: auto; /* keep the badge's natural proportions (Lighthouse image-aspect-ratio) */
   margin-bottom: 4px;
 }
 
@@ -137,7 +137,7 @@
 /* Panel 2: loyalty sign-up (red rewards panel); the source OTP form is not authored */
 .columns-feature-panel .columns-feature-panel-panel-2 {
   padding: 32px 16px 38px;
-  background: rgb(214 6 17) url('https://www.vijaysales.com/content/dam/vijaysaleswebsite/in/en/static-pages/homepage/images/3-card-layout/rewards-bg-desktop.png') center / cover no-repeat;
+  background: rgb(214 6 17) url('rewards-bg.png') center / cover no-repeat;
 }
 
 .columns-feature-panel .columns-feature-panel-panel-2 .columns-feature-panel-media + p {
