@@ -38,7 +38,10 @@ function addScrollControls(block, ul) {
     <button type="button" class="cards-category-next" aria-label="Next"></button>
   `;
   const [prev, next] = nav.querySelectorAll('button');
-  const step = () => (ul.firstElementChild?.getBoundingClientRect().width || ul.clientWidth) + 16;
+  const step = () => {
+    const gap = parseFloat(getComputedStyle(ul).columnGap) || 0;
+    return (ul.firstElementChild?.getBoundingClientRect().width || ul.clientWidth) + gap;
+  };
   const update = () => {
     prev.disabled = ul.scrollLeft <= 1;
     next.disabled = ul.scrollLeft + ul.clientWidth >= ul.scrollWidth - 1;

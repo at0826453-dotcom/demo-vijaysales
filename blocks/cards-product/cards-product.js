@@ -30,19 +30,47 @@ function linkCardImage(li) {
   a.append(picture);
 }
 
-/** Tags common product-card lines so they can be styled without changing authoring. */
+/**
+ * Tags common product-card lines so they can be styled without changing authoring.
+ * Short text lines authored before the product name are badges; price, MRP and
+ * discount lines after it are grouped into one row.
+ */
 function tagProductLines(body) {
-  body.querySelectorAll('p, li').forEach((el) => {
+  const title = body.querySelector('h1, h2, h3, h4, h5, h6, a')?.closest('p, h1, h2, h3, h4, h5, h6');
+  title?.classList.add('cards-product-title');
+  const lines = [...body.querySelectorAll(':scope > p, :scope > li, :scope > ul > li')];
+  const titleIndex = title ? lines.indexOf(title) : -1;
+  const badges = [];
+  lines.forEach((el, i) => {
     const t = el.textContent.trim();
-    if (!t) return;
-    if (el.querySelector('del, s')) el.classList.add('cards-product-price');
-    else if (/^(₹|rs\.?|inr)/i.test(t)) el.classList.add('cards-product-price');
-    else if (/%\s*off/i.test(t)) el.classList.add('cards-product-discount');
-    else if (/^(mrp)/i.test(t)) el.classList.add('cards-product-mrp');
+    if (!t || el === title) return;
+    if (i < titleIndex && !el.querySelector('a, picture')) badges.push(el);
+    else if (el.querySelector('del, s') || /^mrp/i.test(t)) el.classList.add('cards-product-mrp');
+    else if (/^(₹|rs\.?\s|inr)\s*[\d,]+(\.\d+)?$/i.test(t)) el.classList.add('cards-product-price');
+    else if (/^\d+(\.\d+)?\s*%\s*off$/i.test(t)) el.classList.add('cards-product-discount');
     else if (/^\(?\d(\.\d)?\)?\s*(★|\/\s*5|\(\d+\))/.test(t) || /^[★☆]+/.test(t)) el.classList.add('cards-product-rating');
+    else if (/deals?\s+available|offers?\s+available/i.test(t)) el.classList.add('cards-product-offer');
+    else if (/deliver|pickup|shipping/i.test(t)) el.classList.add('cards-product-delivery');
   });
-  const title = body.querySelector('h1, h2, h3, h4, h5, h6, a');
-  title?.closest('p, h1, h2, h3, h4, h5, h6')?.classList.add('cards-product-title');
+
+  if (badges.length) {
+    const wrap = document.createElement('div');
+    wrap.className = 'cards-product-badges';
+    badges.forEach((el, i) => {
+      el.classList.add('cards-product-badge');
+      if (i === 0 && !/bought|seller/i.test(el.textContent)) el.classList.add('cards-product-badge-filled');
+      wrap.append(el);
+    });
+    body.prepend(wrap);
+  }
+
+  const priceLines = body.querySelectorAll(':scope > .cards-product-price, :scope > .cards-product-mrp, :scope > .cards-product-discount');
+  if (priceLines.length) {
+    const pricing = document.createElement('div');
+    pricing.className = 'cards-product-pricing';
+    priceLines[0].before(pricing);
+    pricing.append(...priceLines);
+  }
 }
 
 function addScrollControls(block, ul) {
@@ -53,7 +81,8 @@ function addScrollControls(block, ul) {
     <button type="button" class="cards-product-next" aria-label="Next"></button>
   `;
   const [prev, next] = nav.querySelectorAll('button');
-  const step = () => (ul.firstElementChild?.getBoundingClientRect().width || ul.clientWidth) + 16;
+  const step = () => (ul.firstElementChild?.getBoundingClientRect().width || ul.clientWidth)
+    + (parseFloat(getComputedStyle(ul).columnGap) || 0);
   const update = () => {
     prev.disabled = ul.scrollLeft <= 1;
     next.disabled = ul.scrollLeft + ul.clientWidth >= ul.scrollWidth - 1;

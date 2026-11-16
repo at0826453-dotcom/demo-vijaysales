@@ -1,27 +1,18 @@
+/* Source: .loyalty-card-wrp (vijaysales.com home). Mobile first; desktop at 900px. */
 .columns-feature-panel .columns-feature-panel-row {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .columns-feature-panel .columns-feature-panel-panel {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  box-sizing: border-box;
   min-width: 0;
-  padding: 24px;
-  border: 1px solid #ddd;
   border-radius: 16px;
   overflow: hidden;
-}
-
-.columns-feature-panel .columns-feature-panel-panel > :first-child {
-  margin-top: 0;
-}
-
-.columns-feature-panel .columns-feature-panel-panel > :last-child {
-  margin-bottom: 0;
 }
 
 .columns-feature-panel .columns-feature-panel-panel p {
@@ -30,6 +21,10 @@
 
 .columns-feature-panel .columns-feature-panel-media {
   line-height: 0;
+}
+
+.columns-feature-panel .columns-feature-panel-media picture {
+  display: block;
 }
 
 .columns-feature-panel img {
@@ -49,17 +44,154 @@
   object-fit: cover;
 }
 
-.columns-feature-panel .columns-feature-panel-cta {
-  margin-top: auto;
+/* CTA pills (source .cmp-teaser__action-link / .cmp-form-button) */
+.columns-feature-panel .columns-feature-panel-cta a:any-link {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Panel 1: Your Reliable Partners (dark textured teaser) */
+.columns-feature-panel .columns-feature-panel-panel-1 {
+  padding: 41px 24px 119px;
+  background: #000 url('https://www.vijaysales.com/content/dam/vijaysaleswebsite/in/en/static-pages/homepage/images/3-card-layout/reliable-partner-bg-desktop.png') center / cover no-repeat;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-1 .columns-feature-panel-media img,
+.columns-feature-panel .columns-feature-panel-panel-2 .columns-feature-panel-media img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 4px;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-1 h3 {
+  margin: 0;
+  padding: 28px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: #fff;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-1 h3 + p {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  color: #fff;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-1 .columns-feature-panel-cta {
+  padding-top: 40px;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-1 .columns-feature-panel-cta a:any-link {
+  background: #fff;
+  color: #000;
+}
+
+/* Panel 3: VS+ Extended Warranty (white bordered teaser) */
+.columns-feature-panel .columns-feature-panel-panel-3 {
+  padding: 59px 16px 90px;
+  border: 2px solid rgb(217 217 217);
+  background-color: #fff;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-3 > * {
+  max-width: 209px;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-3 .columns-feature-panel-media img {
+  width: auto;
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-3 h3 {
+  margin: 0;
+  padding: 40px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.columns-feature-panel .columns-feature-panel-panel-3 h3 + p {
+  padding-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Panel 2: loyalty sign-up (red rewards panel); the source OTP form is not authored */
+.columns-feature-panel .columns-feature-panel-panel-2 {
+  padding: 32px 16px 38px;
+  background: rgb(214 6 17) url('https://www.vijaysales.com/content/dam/vijaysaleswebsite/in/en/static-pages/homepage/images/3-card-layout/rewards-bg-desktop.png') center / cover no-repeat;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-2 .columns-feature-panel-media + p {
+  max-width: 244px;
+  padding: 16px 0 24px;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: #fff;
+}
+
+.columns-feature-panel .columns-feature-panel-panel-2 .columns-feature-panel-cta a:any-link {
+  background: var(--button-background);
+  color: var(--button-text-color);
 }
 
 @media (width >= 900px) {
   .columns-feature-panel .columns-feature-panel-row {
-    flex-direction: row;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 616fr 292fr 292fr;
+    gap: 32px;
   }
 
   .columns-feature-panel .columns-feature-panel-panel {
-    flex: 1 1 0;
+    min-height: 418px;
+  }
+
+  .columns-feature-panel .columns-feature-panel-panel-1 {
+    padding: 41px 24px 44px;
+  }
+
+  .columns-feature-panel .columns-feature-panel-panel-1 h3 {
+    padding-top: 22px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .columns-feature-panel .columns-feature-panel-panel-1 h3 + p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .columns-feature-panel .columns-feature-panel-panel-1 .columns-feature-panel-cta {
+    margin-top: auto;
+    padding-top: 111px;
+  }
+
+  .columns-feature-panel .columns-feature-panel-panel-3 {
+    padding-bottom: 38px;
+  }
+
+  .columns-feature-panel .columns-feature-panel-panel-3 h3 {
+    padding-top: 37px;
   }
 }

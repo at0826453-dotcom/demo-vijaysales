@@ -29,10 +29,41 @@ function tagProductLines(card) {
   });
 }
 
+/** Adds prev/next buttons that scroll the card list one card at a time. */
+function addCarouselNav(ul) {
+  const nav = document.createElement('div');
+  nav.className = 'tabs-product-nav';
+  const buttons = ['prev', 'next'].map((dir) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `tabs-product-nav-${dir}`;
+    btn.setAttribute('aria-label', dir === 'prev' ? 'Previous products' : 'Next products');
+    btn.addEventListener('click', () => {
+      const card = ul.querySelector('.tabs-product-card');
+      const gap = parseFloat(getComputedStyle(ul).columnGap) || 0;
+      const step = card ? card.getBoundingClientRect().width + gap : ul.clientWidth;
+      ul.scrollBy({ left: dir === 'prev' ? -step : step, behavior: 'smooth' });
+    });
+    nav.append(btn);
+    return btn;
+  });
+  const update = () => {
+    const max = ul.scrollWidth - ul.clientWidth - 1;
+    buttons[0].disabled = ul.scrollLeft <= 0;
+    buttons[1].disabled = ul.scrollLeft >= max;
+  };
+  ul.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  if (window.ResizeObserver) new ResizeObserver(update).observe(ul);
+  update();
+  ul.after(nav);
+}
+
 /** Turns the panel's product list into scrollable product cards. */
 function decorateProducts(panel) {
   panel.querySelectorAll(':scope > div > ul, :scope > ul').forEach((ul) => {
     ul.classList.add('tabs-product-cards');
+    addCarouselNav(ul);
     [...ul.children].forEach((li) => {
       li.classList.add('tabs-product-card');
       const pic = li.querySelector('picture');

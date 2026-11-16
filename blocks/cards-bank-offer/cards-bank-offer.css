@@ -1,48 +1,82 @@
-.cards-bank-offer > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 12px;
-  width: max-content;
-}
-
-.cards-bank-offer > ul > li {
-  position: relative;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: 0 0 auto;
-  max-width: 320px;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.cards-bank-offer .cards-bank-offer-card-image {
-  line-height: 0;
-  flex: 0 0 40px;
-}
-
-.cards-bank-offer .cards-bank-offer-card-image img {
-  display: block;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.cards-bank-offer .cards-bank-offer-card-link {
-  display: block;
-}
-
 /* single-line strip of compact chips: logo left, text right */
 .cards-bank-offer {
   overflow: hidden;
+  color: var(--body-text-color);
+  font-family: var(--body-font-family);
+  font-weight: 400;
+}
+
+.cards-bank-offer > ul {
+  list-style: none;
+  margin: 0 0 0 12px;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+/* margin (not gap) keeps the duplicated strip exactly 50% wide for a seamless loop */
+.cards-bank-offer > ul > li {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex: 0 0 265px;
+  width: 265px;
+  height: 80px;
+  margin: 0 30px 16px 0;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+
+.cards-bank-offer .cards-bank-offer-card-image {
+  box-sizing: border-box;
+  flex: 0 0 85px;
+  width: 85px;
+  padding: 0 8px;
+  line-height: 0;
+  text-align: center;
+}
+
+.cards-bank-offer .cards-bank-offer-card-image img {
+  display: inline-block;
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cards-bank-offer .cards-bank-offer-card-body {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 0 1px 0 8px;
+  border-left: 1px dotted #aaa;
+  line-height: 12px;
+  text-align: left;
 }
 
 .cards-bank-offer .cards-bank-offer-card-body p {
   margin: 0;
+  color: var(--body-text-color);
+  font-size: 13px;
+  line-height: 13px;
+}
+
+/* T&C note */
+.cards-bank-offer .cards-bank-offer-card-body p:last-child:not(:first-child) {
+  font-size: 10px;
+  line-height: 14px;
+  color: #7b7b7b;
+}
+
+.cards-bank-offer .cards-bank-offer-card-link {
+  display: block;
 }
 
 .cards-bank-offer.cards-bank-offer-animated > ul {
@@ -62,5 +96,12 @@
 @media (prefers-reduced-motion: reduce) {
   .cards-bank-offer {
     overflow-x: auto;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-bank-offer > ul {
+    margin: 0;
+    padding: 10px 0;
   }
 }

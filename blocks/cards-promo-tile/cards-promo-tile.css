@@ -1,39 +1,57 @@
+/* mobile: tiles stack, 24px from the viewport edge (section adds 16px) */
+.cards-promo-tile {
+  padding: 0 8px;
+}
+
 .cards-promo-tile > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 24px;
 }
 
 .cards-promo-tile > ul > li {
   position: relative;
   min-width: 0;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .cards-promo-tile .cards-promo-tile-card-image {
   line-height: 0;
-}
-
-.cards-promo-tile .cards-promo-tile-card-image img {
-  display: block;
-  width: 100%;
-  height: auto;
+  padding-bottom: 4px;
 }
 
 .cards-promo-tile .cards-promo-tile-card-link {
   display: block;
 }
 
+/*
+ * Scene7 pads renditions requested by width only (e.g. 2000x300 for a
+ * 616x300 asset), so the tile keeps the asset ratio and crops the padding.
+ */
+.cards-promo-tile .cards-promo-tile-card-image img {
+  display: block;
+  box-sizing: content-box;
+  width: calc(100% - 2px);
+  height: auto;
+  aspect-ratio: 616 / 300;
+  object-fit: cover;
+  border: 1px solid rgb(217 217 217);
+  border-radius: 16px;
+}
+
 .cards-promo-tile .cards-promo-tile-card-body {
   padding: 8px 0;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
+  .cards-promo-tile {
+    padding: 0 12px;
+  }
+
   .cards-promo-tile > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 56px;
   }
 }

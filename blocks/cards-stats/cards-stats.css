@@ -1,10 +1,16 @@
+/* cards-stats: source .counter-wrap — mobile-first (375px), desktop at 900px+ */
+.cards-stats {
+  padding: 24px 8px;
+}
+
 .cards-stats > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
 }
 
 .cards-stats > ul > li {
@@ -22,14 +28,10 @@
   height: auto;
 }
 
-.cards-stats .cards-stats-card-link {
-  display: block;
-}
-
 .cards-stats .cards-stats-card-body {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 44px;
 }
 
 .cards-stats .cards-stats-card-body p {
@@ -37,14 +39,50 @@
 }
 
 .cards-stats .cards-stats-value {
-  flex: 0 0 auto;
-  font-size: 2.5em;
-  font-weight: 700;
-  line-height: 1;
+  flex: 0 0 150px;
+  font-family: var(--heading-font-family);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 60px;
+  color: var(--text-color);
+  white-space: nowrap;
 }
 
-@media (width >= 600px) {
+.cards-stats .cards-stats-value strong,
+.cards-stats .cards-stats-value b {
+  font-weight: inherit;
+}
+
+.cards-stats .cards-stats-caption {
+  flex: 0 0 auto;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .cards-stats {
+    padding: 32px 0;
+  }
+
   .cards-stats > ul {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .cards-stats .cards-stats-card-body {
+    gap: 16px;
+  }
+
+  .cards-stats .cards-stats-value {
+    flex: 0 0 auto;
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .cards-stats .cards-stats-caption {
+    color: #434343;
   }
 }

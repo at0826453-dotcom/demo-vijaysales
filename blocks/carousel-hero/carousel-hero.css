@@ -1,9 +1,9 @@
+/* mobile first: full-bleed banner (section gutter is 16px below 900px) */
 .carousel-hero {
   position: relative;
-}
-
-.carousel-hero .carousel-hero-slides-container {
-  position: relative;
+  margin-inline: -16px;
+  padding: 19px 0 1px;
+  overflow: hidden;
 }
 
 .carousel-hero .carousel-hero-slides,
@@ -43,7 +43,7 @@
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* desktop / mobile artwork swap */
@@ -59,29 +59,23 @@
   padding: 16px;
 }
 
+/* prev / next arrows (desktop only) */
 .carousel-hero .carousel-hero-navigation-buttons {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  right: 12px;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 .carousel-hero .carousel-hero-navigation-buttons button {
   position: relative;
-  width: 40px;
-  height: 40px;
+  box-sizing: border-box;
+  width: 45px;
+  height: 47px;
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 50%;
-  background-color: rgb(255 255 255 / 80%);
-  color: inherit;
+  border-radius: 11px;
+  background-color: rgb(37 37 37 / 20%);
+  box-shadow: rgb(0 0 0 / 30%) 0 2px 8px 0;
+  color: rgb(255 255 255);
   cursor: pointer;
   pointer-events: auto;
 }
@@ -89,55 +83,66 @@
 .carousel-hero .carousel-hero-navigation-buttons button::after {
   display: block;
   content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 3px);
+  width: 16px;
+  height: 16px;
   border: 2px solid currentcolor;
   border-bottom: 0;
   border-left: 0;
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 2px);
   transform: translate(-50%, -50%) rotate(-135deg);
 }
 
 .carousel-hero .carousel-hero-navigation-buttons button.slide-next::after {
-  left: calc(50% - 2px);
+  left: calc(50% - 3px);
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
+/* dot pagination, overlaid on the banner bottom */
 .carousel-hero .carousel-hero-slide-indicators {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px 8px;
-  padding: 12px 0;
+  align-items: flex-end;
   line-height: 0;
 }
 
+.carousel-hero .carousel-hero-slide-indicator {
+  display: flex;
+  margin: 0 2px;
+}
+
 .carousel-hero .carousel-hero-slide-indicator button {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   margin: 0;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: rgb(255 255 255);
+  opacity: 0.6;
   cursor: pointer;
 }
 
-.carousel-hero .carousel-hero-slide-indicator button:disabled,
-.carousel-hero .carousel-hero-slide-indicator button:hover,
-.carousel-hero .carousel-hero-slide-indicator button:focus-visible {
-  background-color: currentcolor;
+.carousel-hero .carousel-hero-slide-indicator button:disabled {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  cursor: default;
 }
 
-@media (width < 600px) {
-  .carousel-hero .carousel-hero-navigation-buttons {
-    display: none;
+@media (width >= 900px) {
+  .carousel-hero {
+    margin-inline: 0;
+    padding-bottom: 4px;
   }
-}
 
-@media (width >= 600px) {
   .carousel-hero .carousel-hero-desktop {
     display: block;
   }
@@ -147,7 +152,19 @@
   }
 
   .carousel-hero .carousel-hero-navigation-buttons {
-    left: 24px;
-    right: 24px;
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    right: 6px;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: -22px;
+    pointer-events: none;
+  }
+
+  .carousel-hero .carousel-hero-slide-indicators {
+    bottom: 14px;
   }
 }
